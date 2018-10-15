@@ -37,8 +37,10 @@ angular.module('chatApp.signup', ['chatApp.utils'])
             };
             var dataPhoneNumber = {
                 Name : 'phone_number',
-                Value : '+1' + $scope.user.phone
+                Value : '+' + $scope.user.phone
             };
+//                  Value : '+1' + $scope.user.phone
+//            };
             var dataName = {
                 Name : 'name',
                 Value : $scope.user.name
