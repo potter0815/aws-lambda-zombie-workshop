@@ -331,7 +331,8 @@ Head back to the survivor chat app and **Refresh the page** type messages. POST 
 
 * * *
 
-## Lab 2 - SMS Integration with Twilio
+## Lab 2 - ATTENTION, Twillio does no more offer free Numbers, CreditCard required -
+## Lab 2 - SMS Integration with Twilio 
 
 **What you'll do in this lab...**
 
@@ -449,6 +450,8 @@ If the integration was successful, you should receive a confirmation response te
 
 * **For international users**: If you have an international phone number and want to send text messages -
   1. Modify your user record in the DynamoDB Users table with your correct International Phone Number. You need to do this in DynamoDB directly, because the JS chat application performs validation that requires a 10 digit US phone number on the client. After modifying this in DynamoDB, you should be able to send text messages to your Twilio phone number from your international phone number because the the Lambda phone number validation in the code will recognize your phone number.
+  
+alternatively you can download signup.js and signup.html from this repository (potter0815) and replace your Versions
 
 * * *
 
@@ -464,6 +467,12 @@ In this lab you'll launch an Elasticsearch Service cluster and setup DynamoDB St
 1\. Select the Amazon Elasticsearch icon from the main console page.
 
 2\. Create a new Amazon Elasticsearch domain. Provide it a name such as "[Your CloudFormation stack name]-zombiemessages". Click **Next**.
+
+**Attention** If you use a **ElasticSearch Version > 5.5** you have to add the code below after line 50 in Step 10:
+
+```
+req.headers['Content-Type'] = 'application/json';
+```
 
 3\. On the **Configure Cluster** page, leave the default cluster settings and click **Next**.
 
